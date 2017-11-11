@@ -49,6 +49,7 @@ function ttcData(ttcInfo)
 function draw()
 {
 
+
     console.log(serial.write);
 
  if(millis()-lastCheck>=pollingRate)
@@ -56,6 +57,8 @@ function draw()
 	 loadJSON(sendURL,ttcData); //run the ttc function on the following JSON data
  	lastCheck=millis();
  }
+
+
 
  //if the bus is close, red LED TURNS ON
  if (minutesTilNext<=5)
@@ -118,7 +121,12 @@ serial.write(0);
 
 }
 minutesTilNext>=15;
-
+       fill(255);
+    noStroke();
+    textSize(50);
+   //  textFont(myFont);
+    textAlign(CENTER);
+    text("Minutes to next 504 bus:",windowWidth/2,(windowHeight/80)+(tSize/4));
 }
 
 
